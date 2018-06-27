@@ -1,0 +1,168 @@
+syntax = "proto3";
+
+
+enum Action {
+    CREATEUSER = 0;
+    CHANGEUSER = 5;
+    INSERTINFO = 1;
+    UPDATAINFO = 2;
+    DELETEINFO = 3;
+    CHANGESTATUS = 4;
+    CREATECONCEPT = 6;
+    UPDATACONCEPT = 7;
+    DELETECONCEPT = 8;
+    CREATEROLE = 9;
+    UPDATEROLE = 10;
+    DELETEROLE = 11;
+}
+
+message Payload {
+
+
+    Action action = 1;
+
+    uint64 timestamp = 2;
+
+    map<string, string> publicKey = 3;
+
+    CreateRoleAction createRole = 4;
+    UpdataRoleAction updataRole = 5;
+    DeleteRoleAction deleteRole = 6;
+    CreateUserAction createUser = 7;
+    ChangeUserInfoAction changeUser = 8;
+    CreateConceptAction createConcept = 9;
+    UpdateConceptAction updateConcept = 10;
+    DeleteConceptAction deleteConcept = 11;
+    InsertInfoAction insertInfo = 12;
+    UpdataInfoAction updataInfo = 13;
+    ChangeStatusAction changeStatus = 14;
+    DeleteInfoAction deleteInfo = 15;
+};
+
+message Role{
+
+    string uuid = 3;
+
+    string name = 1;
+
+    repeated Action action = 2;
+}
+
+message CreateRoleAction {
+
+    Role role = 1;
+}
+
+message UpdataRoleAction {
+
+    string uuid = 1;
+
+    Role role = 2;
+}
+
+message DeleteRoleAction {
+
+    string uuid = 1;
+
+}
+
+
+message User {
+    string key = 1;
+
+    string name = 2;
+
+    repeated Role role = 3;
+}
+
+// 创建用户
+message CreateUserAction {
+
+    User user = 1;
+}
+
+message ChangeUserInfoAction {
+
+    User user = 1;
+}
+
+// ** BOM 配置
+
+message Concept{
+    string name = 1;
+
+    repeated string keys = 2;
+
+    repeated string childs = 3;
+
+    string timestamp = 4;
+
+    string uuid = 5;
+}
+
+// 创建
+message CreateConceptAction{
+
+    Concept concept = 1;
+}
+
+message UpdateConceptAction{
+
+    Concept concept = 1;
+}
+
+message DeleteConceptAction{
+
+    string uuid = 1;
+}
+
+
+// ** 设备实体操作
+
+message Entity {
+    string uuid = 1;  //设备编号
+
+    string name = 8;
+
+    map<string, string> properties = 2;
+
+    repeated Entity childs = 3;
+
+    string publicKey = 4;
+
+    string status = 5; //状态
+
+    uint64 timestamp = 7;
+
+    repeated Role role = 9;
+}
+
+// 新增
+message InsertInfoAction {
+
+    Entity entity = 1;
+}
+
+
+
+message UpdataInfoAction {
+    string uuid = 1; //设备编号
+
+    Entity entity = 2;
+
+}
+
+// * 改变设备状态
+message ChangeStatusAction {
+
+    string uuid = 1;
+
+    string status = 2;
+}
+
+// 删除
+message DeleteInfoAction {
+
+    string uuid = 1;
+
+}
