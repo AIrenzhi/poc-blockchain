@@ -10,8 +10,4 @@ def func(transation, context):
     # payload.action
 
 if __name__ == '__main__':
-    # handler = Handler('test', [1.0], func)
-    # process = Processor(handler, url)
-    # process.start()
-    data = test()
-    test2(data)
+    pass
