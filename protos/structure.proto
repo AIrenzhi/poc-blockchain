@@ -14,10 +14,10 @@ enum Action {
     CREATEROLE = 9;
     UPDATEROLE = 10;
     DELETEROLE = 11;
+    CREATELOG = 12;
 }
 
 message Payload {
-
 
     Action action = 1;
 
@@ -33,10 +33,10 @@ message Payload {
     CreateConceptAction createConcept = 9;
     UpdateConceptAction updateConcept = 10;
     DeleteConceptAction deleteConcept = 11;
-    InsertInfoAction insertInfo = 12;
-    UpdataInfoAction updataInfo = 13;
-    ChangeStatusAction changeStatus = 14;
-    DeleteInfoAction deleteInfo = 15;
+    InsertEntityAction insertInfo = 12;
+    UpdataEntityAction updataInfo = 13;
+//    ChangeStatusAction changeStatus = 14;
+    DeleteEntityAction deleteInfo = 15;
 };
 
 message Role{
@@ -46,6 +46,15 @@ message Role{
     string name = 1;
 
     repeated Action action = 2;
+
+    uint64 timestamp = 4;
+}
+
+message RoleContainer {
+
+    string uuid = 1;
+
+    repeated Role role = 2;
 }
 
 message CreateRoleAction {
@@ -73,6 +82,17 @@ message User {
     string name = 2;
 
     repeated Role role = 3;
+
+    uint64 timestamp = 4;
+}
+
+message UserContainer{
+
+    string uuid = 1;
+
+    repeated User user = 2;
+
+    uint64 timestamp = 4;
 }
 
 // 创建用户
@@ -95,9 +115,16 @@ message Concept{
 
     repeated string childs = 3;
 
-    string timestamp = 4;
+    uint64 timestamp = 4;
 
     string uuid = 5;
+}
+
+message ConceptContainer {
+
+    string uuid = 1;
+
+    repeated Concept concept = 2;
 }
 
 // 创建
@@ -137,15 +164,20 @@ message Entity {
     repeated Role role = 9;
 }
 
+message EntityContainer {
+    string uuid = 1;
+    repeated Entity entity = 2;
+}
+
 // 新增
-message InsertInfoAction {
+message InsertEntityAction {
 
     Entity entity = 1;
 }
 
 
 
-message UpdataInfoAction {
+message UpdataEntityAction {
     string uuid = 1; //设备编号
 
     Entity entity = 2;
@@ -153,16 +185,39 @@ message UpdataInfoAction {
 }
 
 // * 改变设备状态
-message ChangeStatusAction {
-
-    string uuid = 1;
-
-    string status = 2;
-}
+//message ChangeStatusAction {
+//
+//    string uuid = 1;
+//
+//    string status = 2;
+//}
 
 // 删除
-message DeleteInfoAction {
+message DeleteEntityAction {
 
     string uuid = 1;
+
+}
+
+
+message Log  {
+    string uuid = 1;
+    string summary = 2;  // 日志概要
+    string user_public_key = 3;  //  日志对应的操作人的publicKey
+    string concept_public_key = 4;  // 日志对应操作的concept的publicKey
+    string type = 5;  //日志类型 Create add replace repair 等
+    uint64 timestamp = 6; // 创建时间
+}
+
+message LogContainer{
+
+    string uuid = 1;
+
+    repeated Log log = 2;
+}
+
+message CreateLogAction {
+
+    Log log = 1;
 
 }
