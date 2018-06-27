@@ -45,14 +45,14 @@ message Role{
 
     string name = 1;
 
-    repeated Action action = 2;
+    repeated Action actions = 2;
 
     uint64 timestamp = 4;
 }
 
 message RoleContainer {
 
-    repeated Role role = 1;
+    repeated Role roles = 1;
 }
 
 message CreateRoleAction {
@@ -79,7 +79,7 @@ message User {
 
     string name = 2;
 
-    repeated Role role = 3;
+    repeated Role roles = 3;
 
     uint64 timestamp = 4;
 }
@@ -87,7 +87,7 @@ message User {
 message UserContainer{
 
 
-    repeated User user = 1;
+    repeated User users = 1;
 
 }
 
@@ -119,7 +119,7 @@ message Concept{
 message ConceptContainer {
 
 
-    repeated Concept concept = 1;
+    repeated Concept concepts = 1;
 }
 
 // 创建
@@ -156,11 +156,11 @@ message Entity {
 
     uint64 timestamp = 7;
 
-    repeated Role role = 9;
+    repeated Role roles = 9;
 }
 
 message EntityContainer {
-    repeated Entity entity = 1;
+    repeated Entity entitys = 1;
 }
 
 // 新增
@@ -205,7 +205,7 @@ message Log  {
 
 message LogContainer{
 
-    repeated Log log = 1;
+    repeated Log logs = 1;
 }
 
 message CreateLogAction {
