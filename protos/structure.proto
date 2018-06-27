@@ -52,9 +52,7 @@ message Role{
 
 message RoleContainer {
 
-    string uuid = 1;
-
-    repeated Role role = 2;
+    repeated Role role = 1;
 }
 
 message CreateRoleAction {
@@ -88,11 +86,9 @@ message User {
 
 message UserContainer{
 
-    string uuid = 1;
 
-    repeated User user = 2;
+    repeated User user = 1;
 
-    uint64 timestamp = 4;
 }
 
 // 创建用户
@@ -122,9 +118,8 @@ message Concept{
 
 message ConceptContainer {
 
-    string uuid = 1;
 
-    repeated Concept concept = 2;
+    repeated Concept concept = 1;
 }
 
 // 创建
@@ -165,8 +160,7 @@ message Entity {
 }
 
 message EntityContainer {
-    string uuid = 1;
-    repeated Entity entity = 2;
+    repeated Entity entity = 1;
 }
 
 // 新增
@@ -211,9 +205,7 @@ message Log  {
 
 message LogContainer{
 
-    string uuid = 1;
-
-    repeated Log log = 2;
+    repeated Log log = 1;
 }
 
 message CreateLogAction {
