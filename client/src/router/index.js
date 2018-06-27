@@ -1,53 +1,33 @@
+import Vue from 'vue'
 import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
 import Login from '../pages/Login'
 import Home from '../pages/Home'
 import Index from '../pages/index/index'
 
-// 用户
-import UserList from '../pages/users/List'
-import AddUser from '../pages/users/Add'
+import textRouter from './test.router'
 
-// 订单
-import OrderList from '../pages/orders/List'
-import AddOrder from '../pages/orders/Add'
+let  homeRouters = [
+  { 
+    path: '/', 
+    component: Index 
+  }
+]
+homeRouters = homeRouters.concat(textRouter)
 
-const routes = [
+let routes = [
   { 
     path: '/', 
     component: Home,
-    children:[
-      { 
-        path: '/', 
-        component: Index 
-      },
-      { 
-        path: '/users', 
-        component: UserList 
-      },
-      { 
-        path: '/users/add', 
-        component: AddUser 
-      },
-      { 
-        path: '/users/detail/:id', 
-        component: AddUser 
-      },
-      { 
-        path: '/orders', 
-        component: OrderList 
-      },
-      { 
-        path: '/orders/add', 
-        component: AddOrder 
-      },
-    ]
+    children:homeRouters
   },
   { 
     path: '/login', 
     component: Login 
   },
 ]
+
 
 const router = new VueRouter({
     routes // (缩写) 相当于 routes: routes
