@@ -4,7 +4,7 @@ syntax = "proto3";
 enum Action {
     CREATEUSER = 0;
     UPDATEUSER = 5;
-    INSERTENTITY = 1;
+    CREATEENTITY = 1;
     UPDATEENTITY = 2;
     DELETEENTITY = 3;
     CHANGESTATUS = 4;
@@ -33,10 +33,10 @@ message Payload {
     CreateConceptAction createConcept = 9;
     UpdateConceptAction updateConcept = 10;
     DeleteConceptAction deleteConcept = 11;
-    InsertEntityAction insertInfo = 12;
-    UpdateEntityAction updateInfo = 13;
+    CreateEntityAction createEntity = 12;
+    UpdateEntityAction updateEntity = 13;
 //    ChangeStatusAction changeStatus = 14;
-    DeleteEntityAction deleteInfo = 15;
+    DeleteEntityAction deleteEntity = 15;
 };
 
 message Role{
@@ -164,7 +164,7 @@ message EntityContainer {
 }
 
 // 新增
-message InsertEntityAction {
+message CreateEntityAction {
 
     Entity entity = 1;
 }
