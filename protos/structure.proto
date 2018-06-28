@@ -5,11 +5,11 @@ enum Action {
     CREATEUSER = 0;
     CHANGEUSER = 5;
     INSERTINFO = 1;
-    UPDATAINFO = 2;
+    UPDATEINFO = 2;
     DELETEINFO = 3;
     CHANGESTATUS = 4;
     CREATECONCEPT = 6;
-    UPDATACONCEPT = 7;
+    UPDATECONCEPT = 7;
     DELETECONCEPT = 8;
     CREATEROLE = 9;
     UPDATEROLE = 10;
@@ -26,7 +26,7 @@ message Payload {
     map<string, string> publicKey = 3;
 
     CreateRoleAction createRole = 4;
-    UpdataRoleAction updataRole = 5;
+    UpdateRoleAction updateRole = 5;
     DeleteRoleAction deleteRole = 6;
     CreateUserAction createUser = 7;
     ChangeUserInfoAction changeUser = 8;
@@ -34,7 +34,7 @@ message Payload {
     UpdateConceptAction updateConcept = 10;
     DeleteConceptAction deleteConcept = 11;
     InsertEntityAction insertInfo = 12;
-    UpdataEntityAction updataInfo = 13;
+    UpdateEntityAction updateInfo = 13;
 //    ChangeStatusAction changeStatus = 14;
     DeleteEntityAction deleteInfo = 15;
 };
@@ -60,7 +60,7 @@ message CreateRoleAction {
     Role role = 1;
 }
 
-message UpdataRoleAction {
+message UpdateRoleAction {
 
     string uuid = 1;
 
@@ -171,7 +171,7 @@ message InsertEntityAction {
 
 
 
-message UpdataEntityAction {
+message UpdateEntityAction {
     string uuid = 1; //设备编号
 
     Entity entity = 2;
