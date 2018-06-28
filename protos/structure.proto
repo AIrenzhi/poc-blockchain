@@ -3,10 +3,10 @@ syntax = "proto3";
 
 enum Action {
     CREATEUSER = 0;
-    CHANGEUSER = 5;
-    INSERTINFO = 1;
-    UPDATEINFO = 2;
-    DELETEINFO = 3;
+    UPDATEUSER = 5;
+    INSERTENTITY = 1;
+    UPDATEENTITY = 2;
+    DELETEENTITY = 3;
     CHANGESTATUS = 4;
     CREATECONCEPT = 6;
     UPDATECONCEPT = 7;
@@ -29,7 +29,7 @@ message Payload {
     UpdateRoleAction updateRole = 5;
     DeleteRoleAction deleteRole = 6;
     CreateUserAction createUser = 7;
-    ChangeUserInfoAction changeUser = 8;
+    UpdateUserInfoAction updateUser = 8;
     CreateConceptAction createConcept = 9;
     UpdateConceptAction updateConcept = 10;
     DeleteConceptAction deleteConcept = 11;
@@ -97,7 +97,7 @@ message CreateUserAction {
     User user = 1;
 }
 
-message ChangeUserInfoAction {
+message UpdateUserInfoAction {
 
     User user = 1;
 }
