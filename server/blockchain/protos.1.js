@@ -23,7 +23,7 @@ const protobuf = require('protobufjs')
 const protos = {}
 
 const loadProtos = (filename, protoNames) => {
-  const protoPath = path.resolve(__dirname, '../../protos', filename)
+  const protoPath = path.resolve(__dirname, '../../protos2', filename)
   return protobuf.load(protoPath)
     .then(root => {
       protoNames.forEach(name => {
@@ -34,30 +34,50 @@ const loadProtos = (filename, protoNames) => {
 
 const compile = () => {
   return Promise.all([
-    loadProtos('structure.proto', [
-      'Payload',
-      'Role',
-      'RoleContainer',
-      'CreateRoleAction',
-      'UpdateRoleAction',
-      'DeleteRoleAction',
-      'User',
-      'UserContainer',
-      'CreateUserAction',
-      'UpdateUserInfoAction',
-      'Concept',
-      'ConceptContainer',
-      'CreateConceptAction',
-      'UpdateConceptAction',
-      'DeleteConceptAction',
-      'Entity',
-      'EntityContainer',
-      'InsertEntityAction',
-      'UpdateEntityAction',
-      'DeleteEntityAction',
-      'Log',
-      'LogContainer',
-      'CreateLogAction'
+    loadProtos('agent.proto', [
+      'Agent',
+      'AgentContainer'
+    ]),
+    loadProtos('myuser.proto', [
+      'Myuser',
+      'MyuserContainer'
+    ]),
+    loadProtos('order.proto', [
+      'Order',
+      'OrderContainer'
+    ]),
+    loadProtos('property.proto', [
+      'Property',
+      'PropertyContainer',
+      'PropertyPage',
+      'PropertyPageContainer',
+      'PropertySchema',
+      'PropertyValue',
+      'Location'
+    ]),
+    loadProtos('proposal.proto', [
+      'Proposal',
+      'ProposalContainer'
+    ]),
+    loadProtos('record.proto', [
+      'Record',
+      'RecordContainer',
+      'RecordType',
+      'RecordTypeContainer'
+    ]),
+    loadProtos('payload.proto', [
+      'SCPayload',
+      'CreateAgentAction',
+      'CreateMyuserAction',
+      'CreateOrderAction',
+      'UpdateOrderAction',
+      'FinalizeRecordAction',
+      'CreateRecordAction',
+      'CreateRecordTypeAction',
+      'UpdatePropertiesAction',
+      'CreateProposalAction',
+      'AnswerProposalAction',
+      'RevokeReporterAction'
     ])
   ])
 }

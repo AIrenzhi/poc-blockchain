@@ -5,7 +5,9 @@
         <div class="header">
 
         </div>
-         <router-view class="mian-view"></router-view>
+         <router-view class="mian-view">
+           
+         </router-view>
       </div>
      
   </div>

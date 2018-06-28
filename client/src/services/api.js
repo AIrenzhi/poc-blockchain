@@ -20,7 +20,7 @@ const m = require('mithril')
 const _ = require('lodash')
 const sjcl = require('sjcl')
 
-const API_PATH = 'api/'
+const API_PATH = '/'
 const STORAGE_KEY = 'demo_track.authorization'
 let authToken = null
 

@@ -40,7 +40,7 @@ const initConfigValue = (key, defaultValue = null) => {
 initConfigValue('PORT', 3000)
 initConfigValue('RETRY_WAIT', 5000)
 initConfigValue('DEFAULT_SUBMIT_WAIT', 5000000)
-initConfigValue('VALIDATOR_URL', 'tcp://localhost:4004')
+initConfigValue('VALIDATOR_URL', 'tcp://10.9.70.170:4004')
 initConfigValue('DB_HOST', 'localhost')
 initConfigValue('DB_PORT', 28015)
 initConfigValue('DB_NAME', 'supply_chain')

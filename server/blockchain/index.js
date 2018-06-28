@@ -44,9 +44,9 @@ const connect = () => {
 }
 
 const submit = (txnBytes, { wait }) => {
-  logger.info(111111)
+  // logger.info(111111)
   const batch = batcher.batch(txnBytes)
-
+  console.log('---------------------------')
   return stream.send(
     Message.MessageType.CLIENT_BATCH_SUBMIT_REQUEST,
     ClientBatchSubmitRequest.encode({

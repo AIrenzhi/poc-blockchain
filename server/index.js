@@ -18,8 +18,8 @@
 
 const express = require('express')
 const db = require('./db')
-// const blockchain = require('./blockchain')
-// const protos = require('./blockchain/protos')
+const blockchain = require('./blockchain')
+const protos = require('./blockchain/protos')
 const app = require('./app')
 // const config = require('./system/config')
 
@@ -28,8 +28,8 @@ const app = require('./app')
 
 Promise.all([
   db.connect(),
-  // protos.compile(),
-  // blockchain.connect()
+  protos.compile(),
+  blockchain.connect()
 ])
   .then(() => {
     app.bootstrap()

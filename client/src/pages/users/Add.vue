@@ -33,11 +33,18 @@ export default {
   },
   methods:{
     submitUser(){
-      const keys = transactions.makePrivateKey(this.password)
-      // const user = _.assign(keys, _.pick(state, 'username', 'email'))
-      const user = _.assign(keys, {'username':this.username, 'email':this.email,role:this.role})
-      user.password = api.hashPassword(this.password)
-      const agent = payloads.createMyuser({'name':this.username,role:this.role})
+      // const keys = transactions.makePrivateKey(this.password)
+      // // const user = _.assign(keys, _.pick(state, 'username', 'email'))
+      // const user = _.assign(keys, {'username':this.username, 'email':this.email,role:this.role})
+      // user.password = api.hashPassword(this.password)
+      let user = {
+        user: {
+          key:'1111111111',
+          name:this.username,
+          roles:['aaaa']
+        }
+      }
+      const agent = payloads.createUser(user)
 
   transactions.submit(agent, true)
     // .then(() => api.post('users', user))

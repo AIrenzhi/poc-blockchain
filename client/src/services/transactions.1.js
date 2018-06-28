@@ -31,9 +31,9 @@ import api from './api'
 import http from './http'
 
 const STORAGE_KEY = 'demo_track.encryptedKey'
-const FAMILY_NAME = 'poc-blockchain'
-const FAMILY_VERSION = '1.0'
-const NAMESPACE = createHash('sha512').update(FAMILY_NAME).digest('hex').toLowerCase().substring(0, 6)
+const FAMILY_NAME = 'xo'
+const FAMILY_VERSION = '1.1'
+const NAMESPACE = '5b7349'
 
 const context = new secp256k1.Secp256k1Context()
 let privateKey = null

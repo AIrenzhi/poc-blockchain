@@ -1,6 +1,9 @@
 const express = require('express'),
   _ = require('lodash')
 
+const bodyParser = require('body-parser')
+
+
   const config = require('../system/config')
 
 module.exports.bootstrap = (next) => {
@@ -48,6 +51,8 @@ const _appMiddlewares = app => {
 
 const _biz = app => {
   const router = express.Router()
+  router.use(bodyParser.json({ type: 'application/json' }))
+  router.use(bodyParser.raw({ type: 'application/octet-stream' }))
   const biz = require('./biz')
 
   const output = (req, res) => {
