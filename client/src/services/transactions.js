@@ -34,7 +34,6 @@ const STORAGE_KEY = 'demo_track.encryptedKey'
 const FAMILY_NAME = 'poc-blockchain'
 const FAMILY_VERSION = '1.0'
 const NAMESPACE = createHash('sha512').update(FAMILY_NAME).digest('hex').toLowerCase().substring(0, 6)
-console.log(NAMESPACE)
 
 const context = new secp256k1.Secp256k1Context()
 let privateKey = null
@@ -158,8 +157,9 @@ const changePassword = password => {
  */
 const submit = (payloads, wait = false) => {
   if (!_.isArray(payloads)) payloads = [payloads]
+  
+  // 待删除 根据登录用户判断来拿key
   let keys = createPrivateKey('123456')
-  console.log(keys)
 
   return Promise.resolve()
     .then(() => {

@@ -104,7 +104,7 @@ const getEntries2 = ({ address, value }) => {
 const entryAdder = (block, change) => {
 
   let entries= protos[`UserContainer`]
-    .decode(change.value).users
+    .decode(change.value).entries
 
   console.log(block.blockNum,'entries',entries)
   entries.forEach((entry)=>{
