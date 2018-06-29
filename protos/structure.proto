@@ -29,7 +29,7 @@ message Payload {
     UpdateRoleAction updateRole = 5;
     DeleteRoleAction deleteRole = 6;
     CreateUserAction createUser = 7;
-    UpdateUserInfoAction updateUser = 8;
+    UpdateUserAction updateUser = 8;
     CreateConceptAction createConcept = 9;
     UpdateConceptAction updateConcept = 10;
     DeleteConceptAction deleteConcept = 11;
@@ -97,7 +97,7 @@ message CreateUserAction {
     User user = 1;
 }
 
-message UpdateUserInfoAction {
+message UpdateUserAction {
 
     User user = 1;
 }
