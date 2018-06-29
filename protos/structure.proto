@@ -2,19 +2,19 @@ syntax = "proto3";
 
 
 enum Action {
-    CREATEUSER = 0;
-    UPDATEUSER = 5;
-    CREATEENTITY = 1;
-    UPDATEENTITY = 2;
-    DELETEENTITY = 3;
-    CHANGESTATUS = 4;
-    CREATECONCEPT = 6;
-    UPDATECONCEPT = 7;
-    DELETECONCEPT = 8;
-    CREATEROLE = 9;
-    UPDATEROLE = 10;
-    DELETEROLE = 11;
-    CREATELOG = 12;
+    CREATE_USER = 0;
+    UPDATE_USER = 5;
+    CREATE_ENTITY = 1;
+    UPDATE_ENTITY = 2;
+    DELETE_ENTITY = 3;
+    CHANGE_STATUS = 4;
+    CREATE_CONCEPT = 6;
+    UPDATE_CONCEPT = 7;
+    DELETE_CONCEPT = 8;
+    CREATE_ROLE = 9;
+    UPDATE_ROLE = 10;
+    DELETE_ROLE = 11;
+    CREATE_LOG = 12;
 }
 
 message Payload {
@@ -52,7 +52,7 @@ message Role{
 
 message RoleContainer {
 
-    repeated Role roles = 1;
+    repeated Role entries = 1;
 }
 
 message CreateRoleAction {
@@ -87,7 +87,7 @@ message User {
 message UserContainer{
 
 
-    repeated User users = 1;
+    repeated User entries = 1;
 
 }
 
@@ -119,7 +119,7 @@ message Concept{
 message ConceptContainer {
 
 
-    repeated Concept concepts = 1;
+    repeated Concept entries = 1;
 }
 
 // 创建
@@ -160,7 +160,7 @@ message Entity {
 }
 
 message EntityContainer {
-    repeated Entity entitys = 1;
+    repeated Entity entries = 1;
 }
 
 // 新增
@@ -205,7 +205,7 @@ message Log  {
 
 message LogContainer{
 
-    repeated Log logs = 1;
+    repeated Log entries = 1;
 }
 
 message CreateLogAction {

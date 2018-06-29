@@ -28,7 +28,7 @@ const CreateUserAction = root.lookup('CreateUserAction')
 let actionEnum = {
   "CREATEUSER": 0,
   "UPDATEUSER": 5,
-  "INSERTENTITY": 1,
+  "CREATEENTITY": 1,
   "UPDATEENTITY": 2,
   "DELETEENTITY": 3,
   "CHANGESTATUS": 4,
