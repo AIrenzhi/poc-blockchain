@@ -9,13 +9,13 @@ version = ['1.0']
 
 def func(transation, context):
     print('----')
+    print(transation)
     try:
         payload = structure.Payload()
         payload.ParseFromString(transation.payload)
         print(payload)
         log.info(payload)
-        name_space = _hash(family_name)[:6]
-        Actions[payload.action](transation, context, payload, name_space)
+        Actions[payload.action](transation, context, payload, family_name)
     except Exception as e:
         print(e)
         log.exception(e)
