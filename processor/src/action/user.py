@@ -1,24 +1,22 @@
 from src.utils import _hash, get_address
 import src.protos_pb2 as protos
+from .wrappers import action
 
-
+@action('create')
 def createUser(*args):
     action = args[2].createUser
     user = action.user
     address = get_address(args[3], user.key)
     container = protos.UserContainer()
-    container.users.add().CopyFrom(user)
-    args[1].set_state({address: container.SerializeToString()})
+    return user, address, container
 
+@action('update')
 def updateUser(*args):
     action = args[2].updateUser
     user = action.user
     address = get_address(args[3], user.key)
-    container_data = args[1].get_state([address])
     container = protos.UserContainer()
-    container.ParseFromString(container_data)
-    container.user.add().CopyFrom(user)
-    args[1].set_state({address: container})
+    return user, address, container
 
 if __name__ == '__main__':
     user = protos.User()

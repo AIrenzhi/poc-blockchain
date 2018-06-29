@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cprotos.proto\"\xe2\x04\n\x07Payload\x12\x17\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x07.Action\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12*\n\tpublicKey\x18\x03 \x03(\x0b\x32\x17.Payload.PublicKeyEntry\x12%\n\ncreateRole\x18\x04 \x01(\x0b\x32\x11.CreateRoleAction\x12%\n\nupdateRole\x18\x05 \x01(\x0b\x32\x11.UpdateRoleAction\x12%\n\ndeleteRole\x18\x06 \x01(\x0b\x32\x11.DeleteRoleAction\x12%\n\ncreateUser\x18\x07 \x01(\x0b\x32\x11.CreateUserAction\x12)\n\nupdateUser\x18\x08 \x01(\x0b\x32\x15.UpdateUserInfoAction\x12+\n\rcreateConcept\x18\t \x01(\x0b\x32\x14.CreateConceptAction\x12+\n\rupdateConcept\x18\n \x01(\x0b\x32\x14.UpdateConceptAction\x12+\n\rdeleteConcept\x18\x0b \x01(\x0b\x32\x14.DeleteConceptAction\x12)\n\x0c\x63reateEntity\x18\x0c \x01(\x0b\x32\x13.CreateEntityAction\x12)\n\x0cupdateEntity\x18\r \x01(\x0b\x32\x13.UpdateEntityAction\x12)\n\x0c\x64\x65leteEntity\x18\x0f \x01(\x0b\x32\x13.DeleteEntityAction\x1a\x30\n\x0ePublicKeyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"O\n\x04Role\x12\x0c\n\x04uuid\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x18\n\x07\x61\x63tions\x18\x02 \x03(\x0e\x32\x07.Action\x12\x11\n\ttimestamp\x18\x04 \x01(\x04\"%\n\rRoleContainer\x12\x14\n\x05roles\x18\x01 \x03(\x0b\x32\x05.Role\"\'\n\x10\x43reateRoleAction\x12\x13\n\x04role\x18\x01 \x01(\x0b\x32\x05.Role\"5\n\x10UpdateRoleAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x13\n\x04role\x18\x02 \x01(\x0b\x32\x05.Role\" \n\x10\x44\x65leteRoleAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"J\n\x04User\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x05roles\x18\x03 \x03(\x0b\x32\x05.Role\x12\x11\n\ttimestamp\x18\x04 \x01(\x04\"%\n\rUserContainer\x12\x14\n\x05users\x18\x01 \x03(\x0b\x32\x05.User\"\'\n\x10\x43reateUserAction\x12\x13\n\x04user\x18\x01 \x01(\x0b\x32\x05.User\"+\n\x14UpdateUserInfoAction\x12\x13\n\x04user\x18\x01 \x01(\x0b\x32\x05.User\"V\n\x07\x43oncept\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04keys\x18\x02 \x03(\t\x12\x0e\n\x06\x63hilds\x18\x03 \x03(\t\x12\x11\n\ttimestamp\x18\x04 \x01(\x04\x12\x0c\n\x04uuid\x18\x05 \x01(\t\".\n\x10\x43onceptContainer\x12\x1a\n\x08\x63oncepts\x18\x01 \x03(\x0b\x32\x08.Concept\"0\n\x13\x43reateConceptAction\x12\x19\n\x07\x63oncept\x18\x01 \x01(\x0b\x32\x08.Concept\"0\n\x13UpdateConceptAction\x12\x19\n\x07\x63oncept\x18\x01 \x01(\x0b\x32\x08.Concept\"#\n\x13\x44\x65leteConceptAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"\xe9\x01\n\x06\x45ntity\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x08 \x01(\t\x12+\n\nproperties\x18\x02 \x03(\x0b\x32\x17.Entity.PropertiesEntry\x12\x17\n\x06\x63hilds\x18\x03 \x03(\x0b\x32\x07.Entity\x12\x11\n\tpublicKey\x18\x04 \x01(\t\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x04\x12\x14\n\x05roles\x18\t \x03(\x0b\x32\x05.Role\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x0f\x45ntityContainer\x12\x18\n\x07\x65ntitys\x18\x01 \x03(\x0b\x32\x07.Entity\"-\n\x12\x43reateEntityAction\x12\x17\n\x06\x65ntity\x18\x01 \x01(\x0b\x32\x07.Entity\";\n\x12UpdateEntityAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\x06\x65ntity\x18\x02 \x01(\x0b\x32\x07.Entity\"\"\n\x12\x44\x65leteEntityAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"z\n\x03Log\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0f\n\x07summary\x18\x02 \x01(\t\x12\x17\n\x0fuser_public_key\x18\x03 \x01(\t\x12\x1a\n\x12\x63oncept_public_key\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\x11\n\ttimestamp\x18\x06 \x01(\x04\"\"\n\x0cLogContainer\x12\x12\n\x04logs\x18\x01 \x03(\x0b\x32\x04.Log\"$\n\x0f\x43reateLogAction\x12\x11\n\x03log\x18\x01 \x01(\x0b\x32\x04.Log*\xe8\x01\n\x06\x41\x63tion\x12\x0e\n\nCREATEUSER\x10\x00\x12\x0e\n\nUPDATEUSER\x10\x05\x12\x10\n\x0c\x43REATEENTITY\x10\x01\x12\x10\n\x0cUPDATEENTITY\x10\x02\x12\x10\n\x0c\x44\x45LETEENTITY\x10\x03\x12\x10\n\x0c\x43HANGESTATUS\x10\x04\x12\x11\n\rCREATECONCEPT\x10\x06\x12\x11\n\rUPDATECONCEPT\x10\x07\x12\x11\n\rDELETECONCEPT\x10\x08\x12\x0e\n\nCREATEROLE\x10\t\x12\x0e\n\nUPDATEROLE\x10\n\x12\x0e\n\nDELETEROLE\x10\x0b\x12\r\n\tCREATELOG\x10\x0c\x62\x06proto3')
+  serialized_pb=_b('\n\x0cprotos.proto\"\xde\x04\n\x07Payload\x12\x17\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x07.Action\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12*\n\tpublicKey\x18\x03 \x03(\x0b\x32\x17.Payload.PublicKeyEntry\x12%\n\ncreateRole\x18\x04 \x01(\x0b\x32\x11.CreateRoleAction\x12%\n\nupdateRole\x18\x05 \x01(\x0b\x32\x11.UpdateRoleAction\x12%\n\ndeleteRole\x18\x06 \x01(\x0b\x32\x11.DeleteRoleAction\x12%\n\ncreateUser\x18\x07 \x01(\x0b\x32\x11.CreateUserAction\x12%\n\nupdateUser\x18\x08 \x01(\x0b\x32\x11.UpdateUserAction\x12+\n\rcreateConcept\x18\t \x01(\x0b\x32\x14.CreateConceptAction\x12+\n\rupdateConcept\x18\n \x01(\x0b\x32\x14.UpdateConceptAction\x12+\n\rdeleteConcept\x18\x0b \x01(\x0b\x32\x14.DeleteConceptAction\x12)\n\x0c\x63reateEntity\x18\x0c \x01(\x0b\x32\x13.CreateEntityAction\x12)\n\x0cupdateEntity\x18\r \x01(\x0b\x32\x13.UpdateEntityAction\x12)\n\x0c\x64\x65leteEntity\x18\x0f \x01(\x0b\x32\x13.DeleteEntityAction\x1a\x30\n\x0ePublicKeyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"O\n\x04Role\x12\x0c\n\x04uuid\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x18\n\x07\x61\x63tions\x18\x02 \x03(\x0e\x32\x07.Action\x12\x11\n\ttimestamp\x18\x04 \x01(\x04\"\'\n\rRoleContainer\x12\x16\n\x07\x65ntries\x18\x01 \x03(\x0b\x32\x05.Role\"\'\n\x10\x43reateRoleAction\x12\x13\n\x04role\x18\x01 \x01(\x0b\x32\x05.Role\"5\n\x10UpdateRoleAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x13\n\x04role\x18\x02 \x01(\x0b\x32\x05.Role\" \n\x10\x44\x65leteRoleAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"J\n\x04User\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x05roles\x18\x03 \x03(\x0b\x32\x05.Role\x12\x11\n\ttimestamp\x18\x04 \x01(\x04\"\'\n\rUserContainer\x12\x16\n\x07\x65ntries\x18\x01 \x03(\x0b\x32\x05.User\"\'\n\x10\x43reateUserAction\x12\x13\n\x04user\x18\x01 \x01(\x0b\x32\x05.User\"\'\n\x10UpdateUserAction\x12\x13\n\x04user\x18\x01 \x01(\x0b\x32\x05.User\"V\n\x07\x43oncept\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04keys\x18\x02 \x03(\t\x12\x0e\n\x06\x63hilds\x18\x03 \x03(\t\x12\x11\n\ttimestamp\x18\x04 \x01(\x04\x12\x0c\n\x04uuid\x18\x05 \x01(\t\"-\n\x10\x43onceptContainer\x12\x19\n\x07\x65ntries\x18\x01 \x03(\x0b\x32\x08.Concept\"0\n\x13\x43reateConceptAction\x12\x19\n\x07\x63oncept\x18\x01 \x01(\x0b\x32\x08.Concept\"0\n\x13UpdateConceptAction\x12\x19\n\x07\x63oncept\x18\x01 \x01(\x0b\x32\x08.Concept\"#\n\x13\x44\x65leteConceptAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"\xe9\x01\n\x06\x45ntity\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x08 \x01(\t\x12+\n\nproperties\x18\x02 \x03(\x0b\x32\x17.Entity.PropertiesEntry\x12\x17\n\x06\x63hilds\x18\x03 \x03(\x0b\x32\x07.Entity\x12\x11\n\tpublicKey\x18\x04 \x01(\t\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x04\x12\x14\n\x05roles\x18\t \x03(\x0b\x32\x05.Role\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x0f\x45ntityContainer\x12\x18\n\x07\x65ntries\x18\x01 \x03(\x0b\x32\x07.Entity\"-\n\x12\x43reateEntityAction\x12\x17\n\x06\x65ntity\x18\x01 \x01(\x0b\x32\x07.Entity\";\n\x12UpdateEntityAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\x06\x65ntity\x18\x02 \x01(\x0b\x32\x07.Entity\"\"\n\x12\x44\x65leteEntityAction\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"z\n\x03Log\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0f\n\x07summary\x18\x02 \x01(\t\x12\x17\n\x0fuser_public_key\x18\x03 \x01(\t\x12\x1a\n\x12\x63oncept_public_key\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\x11\n\ttimestamp\x18\x06 \x01(\x04\"%\n\x0cLogContainer\x12\x15\n\x07\x65ntries\x18\x01 \x03(\x0b\x32\x04.Log\"$\n\x0f\x43reateLogAction\x12\x11\n\x03log\x18\x01 \x01(\x0b\x32\x04.Log*\xf5\x01\n\x06\x41\x63tion\x12\x0f\n\x0b\x43REATE_USER\x10\x00\x12\x0f\n\x0bUPDATE_USER\x10\x05\x12\x11\n\rCREATE_ENTITY\x10\x01\x12\x11\n\rUPDATE_ENTITY\x10\x02\x12\x11\n\rDELETE_ENTITY\x10\x03\x12\x11\n\rCHANGE_STATUS\x10\x04\x12\x12\n\x0e\x43REATE_CONCEPT\x10\x06\x12\x12\n\x0eUPDATE_CONCEPT\x10\x07\x12\x12\n\x0e\x44\x45LETE_CONCEPT\x10\x08\x12\x0f\n\x0b\x43REATE_ROLE\x10\t\x12\x0f\n\x0bUPDATE_ROLE\x10\n\x12\x0f\n\x0b\x44\x45LETE_ROLE\x10\x0b\x12\x0e\n\nCREATE_LOG\x10\x0c\x62\x06proto3')
 )
 
 _ACTION = _descriptor.EnumDescriptor(
@@ -30,79 +30,79 @@ _ACTION = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='CREATEUSER', index=0, number=0,
+      name='CREATE_USER', index=0, number=0,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='UPDATEUSER', index=1, number=5,
+      name='UPDATE_USER', index=1, number=5,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='CREATEENTITY', index=2, number=1,
+      name='CREATE_ENTITY', index=2, number=1,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='UPDATEENTITY', index=3, number=2,
+      name='UPDATE_ENTITY', index=3, number=2,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='DELETEENTITY', index=4, number=3,
+      name='DELETE_ENTITY', index=4, number=3,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='CHANGESTATUS', index=5, number=4,
+      name='CHANGE_STATUS', index=5, number=4,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='CREATECONCEPT', index=6, number=6,
+      name='CREATE_CONCEPT', index=6, number=6,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='UPDATECONCEPT', index=7, number=7,
+      name='UPDATE_CONCEPT', index=7, number=7,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='DELETECONCEPT', index=8, number=8,
+      name='DELETE_CONCEPT', index=8, number=8,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='CREATEROLE', index=9, number=9,
+      name='CREATE_ROLE', index=9, number=9,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='UPDATEROLE', index=10, number=10,
+      name='UPDATE_ROLE', index=10, number=10,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='DELETEROLE', index=11, number=11,
+      name='DELETE_ROLE', index=11, number=11,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='CREATELOG', index=12, number=12,
+      name='CREATE_LOG', index=12, number=12,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1977,
-  serialized_end=2209,
+  serialized_start=1975,
+  serialized_end=2220,
 )
 _sym_db.RegisterEnumDescriptor(_ACTION)
 
 Action = enum_type_wrapper.EnumTypeWrapper(_ACTION)
-CREATEUSER = 0
-UPDATEUSER = 5
-CREATEENTITY = 1
-UPDATEENTITY = 2
-DELETEENTITY = 3
-CHANGESTATUS = 4
-CREATECONCEPT = 6
-UPDATECONCEPT = 7
-DELETECONCEPT = 8
-CREATEROLE = 9
-UPDATEROLE = 10
-DELETEROLE = 11
-CREATELOG = 12
+CREATE_USER = 0
+UPDATE_USER = 5
+CREATE_ENTITY = 1
+UPDATE_ENTITY = 2
+DELETE_ENTITY = 3
+CHANGE_STATUS = 4
+CREATE_CONCEPT = 6
+UPDATE_CONCEPT = 7
+DELETE_CONCEPT = 8
+CREATE_ROLE = 9
+UPDATE_ROLE = 10
+DELETE_ROLE = 11
+CREATE_LOG = 12
 
 
 
@@ -139,8 +139,8 @@ _PAYLOAD_PUBLICKEYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=579,
-  serialized_end=627,
+  serialized_start=575,
+  serialized_end=623,
 )
 
 _PAYLOAD = _descriptor.Descriptor(
@@ -261,7 +261,7 @@ _PAYLOAD = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=17,
-  serialized_end=627,
+  serialized_end=623,
 )
 
 
@@ -312,8 +312,8 @@ _ROLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=629,
-  serialized_end=708,
+  serialized_start=625,
+  serialized_end=704,
 )
 
 
@@ -325,7 +325,7 @@ _ROLECONTAINER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='roles', full_name='RoleContainer.roles', index=0,
+      name='entries', full_name='RoleContainer.entries', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -343,8 +343,8 @@ _ROLECONTAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=710,
-  serialized_end=747,
+  serialized_start=706,
+  serialized_end=745,
 )
 
 
@@ -374,8 +374,8 @@ _CREATEROLEACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=749,
-  serialized_end=788,
+  serialized_start=747,
+  serialized_end=786,
 )
 
 
@@ -412,8 +412,8 @@ _UPDATEROLEACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=790,
-  serialized_end=843,
+  serialized_start=788,
+  serialized_end=841,
 )
 
 
@@ -443,8 +443,8 @@ _DELETEROLEACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=845,
-  serialized_end=877,
+  serialized_start=843,
+  serialized_end=875,
 )
 
 
@@ -495,8 +495,8 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=879,
-  serialized_end=953,
+  serialized_start=877,
+  serialized_end=951,
 )
 
 
@@ -508,7 +508,7 @@ _USERCONTAINER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='users', full_name='UserContainer.users', index=0,
+      name='entries', full_name='UserContainer.entries', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -526,7 +526,7 @@ _USERCONTAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=955,
+  serialized_start=953,
   serialized_end=992,
 )
 
@@ -562,15 +562,15 @@ _CREATEUSERACTION = _descriptor.Descriptor(
 )
 
 
-_UPDATEUSERINFOACTION = _descriptor.Descriptor(
-  name='UpdateUserInfoAction',
-  full_name='UpdateUserInfoAction',
+_UPDATEUSERACTION = _descriptor.Descriptor(
+  name='UpdateUserAction',
+  full_name='UpdateUserAction',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user', full_name='UpdateUserInfoAction.user', index=0,
+      name='user', full_name='UpdateUserAction.user', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -589,7 +589,7 @@ _UPDATEUSERINFOACTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1035,
-  serialized_end=1078,
+  serialized_end=1074,
 )
 
 
@@ -647,8 +647,8 @@ _CONCEPT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1080,
-  serialized_end=1166,
+  serialized_start=1076,
+  serialized_end=1162,
 )
 
 
@@ -660,7 +660,7 @@ _CONCEPTCONTAINER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='concepts', full_name='ConceptContainer.concepts', index=0,
+      name='entries', full_name='ConceptContainer.entries', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -678,8 +678,8 @@ _CONCEPTCONTAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1214,
+  serialized_start=1164,
+  serialized_end=1209,
 )
 
 
@@ -709,8 +709,8 @@ _CREATECONCEPTACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1216,
-  serialized_end=1264,
+  serialized_start=1211,
+  serialized_end=1259,
 )
 
 
@@ -740,8 +740,8 @@ _UPDATECONCEPTACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1266,
-  serialized_end=1314,
+  serialized_start=1261,
+  serialized_end=1309,
 )
 
 
@@ -771,8 +771,8 @@ _DELETECONCEPTACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1316,
-  serialized_end=1351,
+  serialized_start=1311,
+  serialized_end=1346,
 )
 
 
@@ -809,8 +809,8 @@ _ENTITY_PROPERTIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1538,
-  serialized_end=1587,
+  serialized_start=1533,
+  serialized_end=1582,
 )
 
 _ENTITY = _descriptor.Descriptor(
@@ -888,8 +888,8 @@ _ENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1354,
-  serialized_end=1587,
+  serialized_start=1349,
+  serialized_end=1582,
 )
 
 
@@ -901,7 +901,7 @@ _ENTITYCONTAINER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='entitys', full_name='EntityContainer.entitys', index=0,
+      name='entries', full_name='EntityContainer.entries', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -919,8 +919,8 @@ _ENTITYCONTAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1589,
-  serialized_end=1632,
+  serialized_start=1584,
+  serialized_end=1627,
 )
 
 
@@ -950,8 +950,8 @@ _CREATEENTITYACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1634,
-  serialized_end=1679,
+  serialized_start=1629,
+  serialized_end=1674,
 )
 
 
@@ -988,8 +988,8 @@ _UPDATEENTITYACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1681,
-  serialized_end=1740,
+  serialized_start=1676,
+  serialized_end=1735,
 )
 
 
@@ -1019,8 +1019,8 @@ _DELETEENTITYACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1742,
-  serialized_end=1776,
+  serialized_start=1737,
+  serialized_end=1771,
 )
 
 
@@ -1085,8 +1085,8 @@ _LOG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1778,
-  serialized_end=1900,
+  serialized_start=1773,
+  serialized_end=1895,
 )
 
 
@@ -1098,7 +1098,7 @@ _LOGCONTAINER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='logs', full_name='LogContainer.logs', index=0,
+      name='entries', full_name='LogContainer.entries', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1116,8 +1116,8 @@ _LOGCONTAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1902,
-  serialized_end=1936,
+  serialized_start=1897,
+  serialized_end=1934,
 )
 
 
@@ -1147,8 +1147,8 @@ _CREATELOGACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1938,
-  serialized_end=1974,
+  serialized_start=1936,
+  serialized_end=1972,
 )
 
 _PAYLOAD_PUBLICKEYENTRY.containing_type = _PAYLOAD
@@ -1158,7 +1158,7 @@ _PAYLOAD.fields_by_name['createRole'].message_type = _CREATEROLEACTION
 _PAYLOAD.fields_by_name['updateRole'].message_type = _UPDATEROLEACTION
 _PAYLOAD.fields_by_name['deleteRole'].message_type = _DELETEROLEACTION
 _PAYLOAD.fields_by_name['createUser'].message_type = _CREATEUSERACTION
-_PAYLOAD.fields_by_name['updateUser'].message_type = _UPDATEUSERINFOACTION
+_PAYLOAD.fields_by_name['updateUser'].message_type = _UPDATEUSERACTION
 _PAYLOAD.fields_by_name['createConcept'].message_type = _CREATECONCEPTACTION
 _PAYLOAD.fields_by_name['updateConcept'].message_type = _UPDATECONCEPTACTION
 _PAYLOAD.fields_by_name['deleteConcept'].message_type = _DELETECONCEPTACTION
@@ -1166,24 +1166,24 @@ _PAYLOAD.fields_by_name['createEntity'].message_type = _CREATEENTITYACTION
 _PAYLOAD.fields_by_name['updateEntity'].message_type = _UPDATEENTITYACTION
 _PAYLOAD.fields_by_name['deleteEntity'].message_type = _DELETEENTITYACTION
 _ROLE.fields_by_name['actions'].enum_type = _ACTION
-_ROLECONTAINER.fields_by_name['roles'].message_type = _ROLE
+_ROLECONTAINER.fields_by_name['entries'].message_type = _ROLE
 _CREATEROLEACTION.fields_by_name['role'].message_type = _ROLE
 _UPDATEROLEACTION.fields_by_name['role'].message_type = _ROLE
 _USER.fields_by_name['roles'].message_type = _ROLE
-_USERCONTAINER.fields_by_name['users'].message_type = _USER
+_USERCONTAINER.fields_by_name['entries'].message_type = _USER
 _CREATEUSERACTION.fields_by_name['user'].message_type = _USER
-_UPDATEUSERINFOACTION.fields_by_name['user'].message_type = _USER
-_CONCEPTCONTAINER.fields_by_name['concepts'].message_type = _CONCEPT
+_UPDATEUSERACTION.fields_by_name['user'].message_type = _USER
+_CONCEPTCONTAINER.fields_by_name['entries'].message_type = _CONCEPT
 _CREATECONCEPTACTION.fields_by_name['concept'].message_type = _CONCEPT
 _UPDATECONCEPTACTION.fields_by_name['concept'].message_type = _CONCEPT
 _ENTITY_PROPERTIESENTRY.containing_type = _ENTITY
 _ENTITY.fields_by_name['properties'].message_type = _ENTITY_PROPERTIESENTRY
 _ENTITY.fields_by_name['childs'].message_type = _ENTITY
 _ENTITY.fields_by_name['roles'].message_type = _ROLE
-_ENTITYCONTAINER.fields_by_name['entitys'].message_type = _ENTITY
+_ENTITYCONTAINER.fields_by_name['entries'].message_type = _ENTITY
 _CREATEENTITYACTION.fields_by_name['entity'].message_type = _ENTITY
 _UPDATEENTITYACTION.fields_by_name['entity'].message_type = _ENTITY
-_LOGCONTAINER.fields_by_name['logs'].message_type = _LOG
+_LOGCONTAINER.fields_by_name['entries'].message_type = _LOG
 _CREATELOGACTION.fields_by_name['log'].message_type = _LOG
 DESCRIPTOR.message_types_by_name['Payload'] = _PAYLOAD
 DESCRIPTOR.message_types_by_name['Role'] = _ROLE
@@ -1194,7 +1194,7 @@ DESCRIPTOR.message_types_by_name['DeleteRoleAction'] = _DELETEROLEACTION
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['UserContainer'] = _USERCONTAINER
 DESCRIPTOR.message_types_by_name['CreateUserAction'] = _CREATEUSERACTION
-DESCRIPTOR.message_types_by_name['UpdateUserInfoAction'] = _UPDATEUSERINFOACTION
+DESCRIPTOR.message_types_by_name['UpdateUserAction'] = _UPDATEUSERACTION
 DESCRIPTOR.message_types_by_name['Concept'] = _CONCEPT
 DESCRIPTOR.message_types_by_name['ConceptContainer'] = _CONCEPTCONTAINER
 DESCRIPTOR.message_types_by_name['CreateConceptAction'] = _CREATECONCEPTACTION
@@ -1282,12 +1282,12 @@ CreateUserAction = _reflection.GeneratedProtocolMessageType('CreateUserAction', 
   ))
 _sym_db.RegisterMessage(CreateUserAction)
 
-UpdateUserInfoAction = _reflection.GeneratedProtocolMessageType('UpdateUserInfoAction', (_message.Message,), dict(
-  DESCRIPTOR = _UPDATEUSERINFOACTION,
+UpdateUserAction = _reflection.GeneratedProtocolMessageType('UpdateUserAction', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEUSERACTION,
   __module__ = 'protos_pb2'
-  # @@protoc_insertion_point(class_scope:UpdateUserInfoAction)
+  # @@protoc_insertion_point(class_scope:UpdateUserAction)
   ))
-_sym_db.RegisterMessage(UpdateUserInfoAction)
+_sym_db.RegisterMessage(UpdateUserAction)
 
 Concept = _reflection.GeneratedProtocolMessageType('Concept', (_message.Message,), dict(
   DESCRIPTOR = _CONCEPT,

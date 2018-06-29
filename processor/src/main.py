@@ -15,7 +15,8 @@ def func(transation, context):
         payload.ParseFromString(transation.payload)
         print(payload)
         log.info(payload)
-        Actions[payload.action](transation, context, payload, family_name)
+        info = Actions[payload.action](transation, context, payload, family_name)
+        log.info(info)
     except Exception as e:
         print(e)
         log.exception(e)
