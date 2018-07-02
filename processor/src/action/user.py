@@ -1,12 +1,13 @@
 from src.utils import _hash, get_address
 import src.protos_pb2 as protos
 from .wrappers import action
+from src.constant import USERTYPE
 
 @action('create')
 def createUser(*args):
     action = args[2].createUser
     user = action.user
-    address = get_address(args[3], user.key)
+    address = get_address(args[3], user.key, USERTYPE)
     container = protos.UserContainer()
     return user, address, container
 
@@ -14,7 +15,7 @@ def createUser(*args):
 def updateUser(*args):
     action = args[2].updateUser
     user = action.user
-    address = get_address(args[3], user.key)
+    address = get_address(args[3], user.key, USERTYPE)
     container = protos.UserContainer()
     return user, address, container
 
